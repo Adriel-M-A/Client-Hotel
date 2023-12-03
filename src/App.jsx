@@ -1,8 +1,13 @@
+import { BrowserRouter } from "react-router-dom";
+import AppRoutes from "./routes/AppRoutes";
+import Navigate from "./components/layout/Navigate";
+
 function App() {
   return (
-    <>
-      <p>hola mundo</p>
-    </>
+    <BrowserRouter>
+      <Navigate />
+      <AppRoutes />
+    </BrowserRouter>
   );
 }
 
