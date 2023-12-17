@@ -1,12 +1,14 @@
 import { BrowserRouter } from "react-router-dom";
 import AppRoutes from "./routes/AppRoutes";
-import Navigate from "./components/layout/Navigate";
+import SideBar from "./components/layout/SideBar";
 
 function App() {
   return (
     <BrowserRouter>
-      <Navigate />
-      <AppRoutes />
+      <div className="flex">
+        <SideBar />
+        <AppRoutes />
+      </div>
     </BrowserRouter>
   );
 }
