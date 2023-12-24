@@ -1,4 +1,5 @@
 import HotelCard from "../cards/HotelCard";
+import Grid from "../../layout/Grid";
 
 function HotelList() {
   // Lista de hoteles de prueba
@@ -16,11 +17,11 @@ function HotelList() {
   ];
 
   return (
-    <div className="grid grid-cols-3 gap-4">
+    <Grid>
       {hoteles.map((hotel) => (
         <HotelCard key={hotel.id} nombre={hotel.nombre} />
       ))}
-    </div>
+    </Grid>
   );
 }
 
