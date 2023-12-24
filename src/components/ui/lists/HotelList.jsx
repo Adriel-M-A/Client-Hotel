@@ -1,20 +1,18 @@
 import HotelCard from "../cards/HotelCard";
 import Grid from "../../layout/Grid";
+import { useHoteles } from "../../../hooks/useHoteles";
+import Loading from "../Loading";
 
-function HotelList() {
-  // Lista de hoteles de prueba
-  const hoteles = [
-    { id: 1, nombre: "Hotel 1" },
-    { id: 2, nombre: "Hotel 2" },
-    { id: 3, nombre: "Hotel 3" },
-    { id: 4, nombre: "Hotel 4" },
-    { id: 5, nombre: "Hotel 5" },
-    { id: 6, nombre: "Hotel 6" },
-    { id: 7, nombre: "Hotel 7" },
-    { id: 8, nombre: "Hotel 8" },
-    { id: 9, nombre: "Hotel 9" },
-    { id: 10, nombre: "Hotel 10" },
-  ];
+const HotelesList = () => {
+  const { hoteles, loading, error } = useHoteles();
+
+  if (loading) {
+    return <Loading />;
+  }
+
+  if (error) {
+    return <div>Error al cargar los hoteles</div>;
+  }
 
   return (
     <Grid>
@@ -23,6 +21,6 @@ function HotelList() {
       ))}
     </Grid>
   );
-}
+};
 
-export default HotelList;
+export default HotelesList;
