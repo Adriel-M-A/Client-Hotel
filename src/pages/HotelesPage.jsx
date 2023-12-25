@@ -1,6 +1,6 @@
 import SearchBar from "../components/layout/SearchBar";
 import FilterBar from "../components/layout/FilterBar";
-import HotelList from "../components/ui/lists/HotelList";
+import HotelList from "../components/lists/HotelList";
 
 function HotelesPage() {
   return (

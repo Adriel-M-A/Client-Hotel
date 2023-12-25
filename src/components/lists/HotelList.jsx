@@ -1,7 +1,7 @@
 import HotelCard from "../cards/HotelCard";
-import Grid from "../../layout/Grid";
-import { useHoteles } from "../../../hooks/useHoteles";
-import Loading from "../Loading";
+import Grid from "../layout/Grid";
+import { useHoteles } from "../../hooks/useHoteles";
+import Loading from "../ui/Loading";
 
 const HotelesList = () => {
   const { hoteles, loading, error } = useHoteles();
