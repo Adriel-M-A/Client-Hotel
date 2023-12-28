@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import API from "../services";
 
-export const useHoteles = () => {
+export const useHoteles = (view = "") => {
   const [hoteles, setHoteles] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -12,7 +12,7 @@ export const useHoteles = () => {
         // Retraso de 3 segundos (3000 milisegundos) Solo es para pruebas
         await new Promise((resolve) => setTimeout(resolve, 3000));
 
-        const response = await API.hoteles.getAll();
+        const response = await API.hoteles.getAll(view);
         setHoteles(response.data);
       } catch (err) {
         setError(err);
@@ -22,7 +22,7 @@ export const useHoteles = () => {
     };
 
     fetchHoteles();
-  }, []);
+  }, [view]);
 
   return { hoteles, loading, error };
 };

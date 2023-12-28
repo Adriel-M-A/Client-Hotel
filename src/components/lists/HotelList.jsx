@@ -4,7 +4,7 @@ import { useHoteles } from "../../hooks/useHoteles";
 import Loading from "../ui/Loading";
 
 const HotelesList = () => {
-  const { hoteles, loading, error } = useHoteles();
+  const { hoteles, loading, error } = useHoteles("mid");
 
   if (loading) {
     return <Loading />;
@@ -17,7 +17,7 @@ const HotelesList = () => {
   return (
     <Grid>
       {hoteles.map((hotel) => (
-        <HotelCard key={hotel.id} nombre={hotel.nombre} />
+        <HotelCard key={hotel.id} hotel={hotel} />
       ))}
     </Grid>
   );

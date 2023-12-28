@@ -3,7 +3,7 @@ import api from "./client";
 // Definimos los endpoints de la API
 const apiEndpoints = (path) => ({
   get: (id, view = "") => api.get(`/${path}/${id}/${view}`).catch(handleError),
-  getAll: () => api.get(`/${path}/`).catch(handleError),
+  getAll: (view = "") => api.get(`/${path}/${view}`).catch(handleError),
   create: (data) => api.post(`/${path}/`, data).catch(handleError),
   update: (id, data) => api.put(`/${path}/${id}`, data).catch(handleError),
   delete: (id) => api.delete(`/${path}/${id}`).catch(handleError),
