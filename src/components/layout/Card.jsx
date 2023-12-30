@@ -1,10 +1,5 @@
-function Card() {
-  return <></>;
+function Card({ children }) {
+  return <div className="bg-slate-500">{children}</div>;
 }
 
 export default Card;
-
-/**
- * Este componente se supone que es la base de todas las tarjetas (card)
- * todo lo que tengan en comun y sea repetitivo
- */

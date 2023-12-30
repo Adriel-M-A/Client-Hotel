@@ -1,19 +1,26 @@
+import StarRating from "../utils/StarRating";
+import PriceFilter from "../utils/PriceFilter";
+
 function FilterBar() {
+  const handlePriceOrderChange = (selectedOrder) => {
+    // Lógica para manejar el cambio de orden de precio
+    console.log(
+      `Seleccionaste orden de precio: ${
+        selectedOrder === "lowToHigh" ? "Bajo a alto" : "Alto a bajo"
+      }`
+    );
+  };
+
+  const handleStarChange = (selectedStars) => {
+    // Lógica para manejar el cambio de estrellas seleccionadas
+    console.log(`Seleccionaste ${selectedStars} estrellas`);
+  };
+
   return (
-    <div className="flex justify-between">
-      <select className="mr-2">
-        <option value="">Filtrar por estrellas</option>
-        <option value="1">1 estrella</option>
-        <option value="2">2 estrellas</option>
-        <option value="3">3 estrellas</option>
-        <option value="4">4 estrellas</option>
-        <option value="5">5 estrellas</option>
-      </select>
-      <select>
-        <option value="">Filtrar por precio</option>
-        <option value="low">Bajo a alto</option>
-        <option value="high">Alto a bajo</option>
-      </select>
+    <div className="flex justify-between items-center p-4 bg-white rounded shadow-md mb-4">
+      <StarRating onChange={handleStarChange} />
+      <div className="mx-4"></div> {/* Agregado espacio en blanco */}
+      <PriceFilter onChange={handlePriceOrderChange} />
     </div>
   );
 }

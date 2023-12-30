@@ -9,8 +9,8 @@ export const useHoteles = (view = "") => {
   useEffect(() => {
     const fetchHoteles = async () => {
       try {
-        // Retraso de 3 segundos (3000 milisegundos) Solo es para pruebas
-        await new Promise((resolve) => setTimeout(resolve, 3000));
+        // Retraso de 1 segundos (1000 milisegundos) Solo es para pruebas
+        await new Promise((resolve) => setTimeout(resolve, 1000));
 
         const response = await API.hoteles.getAll(view);
         setHoteles(response.data);
