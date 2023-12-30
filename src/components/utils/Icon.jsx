@@ -7,6 +7,8 @@ const Icon = ({ name, className }) => {
       "icon-[streamline--money-graph-bar-increase-up-product-performance-increase-arrow-graph-business-chart]",
     priceDecrease:
       "icon-[streamline--money-graph-bar-decrease-arrow-product-performance-down-decrease-graph-business-chart]",
+    expand: "icon-[ci--expand]",
+    contract: "icon-[ci--shrink]",
   };
 
   const iconName = icons[name] || "";

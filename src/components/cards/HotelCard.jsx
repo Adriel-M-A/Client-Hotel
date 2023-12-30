@@ -1,11 +1,14 @@
 import Card from "../layout/Card";
 import Estrellas from "../utils/Estrellas";
 
-function HotelCard({ hotel }) {
+function HotelCard({ hotel, onClick, isExpanded }) {
   return (
-    <Card>
-      <h5 className="mb-2 text-xl font-medium ">{hotel.nombre}</h5>
-      <Estrellas numero={hotel.categoria.estrellas} />
+    <Card onClick={onClick} isExpanded={isExpanded}>
+      <div className="flex">
+        <h5 className="mb-2 text-xl font-medium">{hotel.nombre}</h5>
+        <Estrellas numero={hotel.categoria.estrellas} />
+      </div>
+      {isExpanded && <p>Descripción: {hotel.descripcion}</p>}
     </Card>
   );
 }
